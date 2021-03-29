@@ -16,7 +16,7 @@ on:
       version:
         description: 'Version'
         required: true
-        default: '8.0-php8.x'
+        default: '8.x-php8.0'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -34,6 +34,4 @@ jobs:
       - name: Build
         run: |
           docker build -t docker.pkg.github.com/utaustin-laits/docker-laravel-base/laravel-base:${{ github.event.inputs.version }} ${{ github.event.inputs.version }}
-          docker push docker.pkg.github.com/utaustin-laits/docker-laravel-base/laravel_base:${{ github.event.inputs.version }}
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          docker push docker.pkg.github.com/utaustin-laits/docker-laravel-base/laravel-base:${{ github.event.inputs.version }}
