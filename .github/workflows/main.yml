@@ -34,4 +34,5 @@ jobs:
       - name: Build
         run: |
           docker build -t docker.pkg.github.com/utaustin-laits/docker-laravel-base/laravel-base:${{ github.event.inputs.version }} ${{ github.event.inputs.version }}
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
           docker push docker.pkg.github.com/utaustin-laits/docker-laravel-base/laravel-base:${{ github.event.inputs.version }}
