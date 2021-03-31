@@ -8,7 +8,7 @@ RUN sed -i s/"DocumentRoot \/var\/www\/html"/"DocumentRoot \/var\/www\/html\/pub
 # install PHP, Laravel dependencies
 RUN apt-get update \
     && apt-get install -y \
-    sudo \
+    unzip \
     nano \
     libxml2-dev \
     zlib1g-dev \
