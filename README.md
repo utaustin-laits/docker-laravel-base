@@ -27,5 +27,11 @@ CMD['supercronic','/etc/cron.d/laravel']
 
 ## CHANGELOG
 
+### 8.x-php8.1
+PHP 8.1 release, targeting Laravel 8
+* Remove 'tokenizer' as a preinstalled mod
+* Add 'intl' as a preinstalled mod
+* Update Supercronic 0.1.11 -> 0.1.12
+
 ### 8.x-php8.0
-Initial public release
+PHP 8.0 release, targeting Laravel 8
