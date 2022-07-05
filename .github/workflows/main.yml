@@ -16,7 +16,7 @@ on:
       version:
         description: 'Version'
         required: true
-        default: '8.x-php8.0'
+        default: '9.x-php8.1'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
