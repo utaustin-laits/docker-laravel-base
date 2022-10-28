@@ -22,7 +22,7 @@ ADD server /var/www/html
 RUN chmod 777 -R /var/www/html/bootstrap/cache
 RUN chmod 777 -R /var/www/html/storage
 
-CMD['supercronic','/etc/cron.d/laravel']
+CMD ["supercronic","/etc/cron.d/laravel"]
 ```
 
 ## CHANGELOG
