@@ -28,10 +28,10 @@ CMD ["supercronic","/etc/cron.d/laravel"]
 ## CHANGELOG
 
 ### 9.x-php8.2
-No major changes over 9.x-php8.1
+PHP bump; no other changes over 9.x-php8.1
 
 ### 9.x-php8.1
-Laravel 9 release.  No major changes over 8.x-php8.1
+Laravel 9/10 release.  No major changes over 8.x-php8.1
 
 ### 8.x-php8.1
 PHP 8.1 release, targeting Laravel 8
