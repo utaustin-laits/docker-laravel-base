@@ -11,21 +11,18 @@ RUN chmod 777 -R /var/www/html/bootstrap/cache
 RUN chmod 777 -R /var/www/html/storage
 ```
 
-## Use as a cron runner
-This image has Supercronic installed.  Add your crontab file and tell Supercronic to run it.
-```
-FROM ...
+## Use as an artisan runner
+You can override the CMD with `php artisan your:command` to run any artisan command.
+### Use as a queue worker
+`php artisan queue:work --queue=your-queue-name`
+### Use as a schedule runner
+`php artisan schedule:work`
 
-COPY worker/crontab /etc/cron.d/laravel
-
-ADD server /var/www/html
-RUN chmod 777 -R /var/www/html/bootstrap/cache
-RUN chmod 777 -R /var/www/html/storage
-
-CMD ["supercronic","/etc/cron.d/laravel"]
-```
 
 ## CHANGELOG
+
+### 10.x-php8.2
+Removed Supercronic.  Added instructions for how to run artisan commands as replacement for cron-like functionality.
 
 ### 9.x-php8.2
 PHP bump; no other changes over 9.x-php8.1
