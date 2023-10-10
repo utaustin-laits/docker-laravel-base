@@ -16,6 +16,10 @@ RUN apt-get update \
     libonig-dev \
     && rm -rf /var/lib/apt/lists/*
 
+RUN pecl install redis && \
+    docker-php-ext-enable redis && \
+    rm -rf /tmp/pear
+
 RUN docker-php-ext-install \
                            mbstring \
                            pdo_mysql \
