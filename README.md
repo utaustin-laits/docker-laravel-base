@@ -21,6 +21,9 @@ You can override the CMD with `php artisan your:command` to run any artisan comm
 
 ## CHANGELOG
 
+### 10.x-php8.3
+PHP bump; no other changes over 10.x-php8.2
+
 ### 10.x-php8.2
 Removed Supercronic.  Added instructions for how to run artisan commands as replacement for cron-like functionality.
 
