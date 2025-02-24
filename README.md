@@ -21,6 +21,9 @@ You can override the CMD with `php artisan your:command` to run any artisan comm
 
 ## CHANGELOG
 
+### 12.x-php8.4
+PHP bump; no other changes over 11.x-php8.3
+
 ### 11.x-php8.3
 No changes over 10.x-php8.3
 
