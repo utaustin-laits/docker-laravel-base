@@ -1,6 +1,5 @@
 FROM ubuntu:24.04
-ENV DEBIAN_FRONTEND noninteractive
-COPY --from=phpbuild /var/www/html /var/www/html
+ENV DEBIAN_FRONTEND=noninteractive
 
 # Apache + PHP
 RUN apt-get update \
@@ -55,7 +54,7 @@ COPY config/supervisord/conf.d/ /etc/supervisor/conf.d/
 # Configuration
 COPY ./config/apache/000-default.conf /etc/apache2/sites-available/000-default.conf
 COPY config/php_fpm/php.ini /etc/php/8.3/fpm/php.ini
-# COPY config/php_fpm/pool.d/www.conf /etc/php/8.3/fpm/pool.d/www.conf
+COPY config/php_fpm/pool.d/www.conf /etc/php/8.3/fpm/pool.d/www.conf
 
 # logs should go to stdout/stderr
 RUN ln -sfT /dev/stderr "/var/log/apache2/error.log"; \

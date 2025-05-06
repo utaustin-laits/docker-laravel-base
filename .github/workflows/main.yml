@@ -16,7 +16,7 @@ on:
       version:
         description: 'Version'
         required: true
-        default: '11.x-php8.3'
+        default: 'ubuntu:24.04'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
