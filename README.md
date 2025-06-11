@@ -30,11 +30,11 @@ You can override the CMD with `php artisan your:command` to run any artisan comm
 ## CHANGELOG
 
 ### ubuntu-24.04 (PHP 8.3)
-Newer `fpm`-based image.  Migration steps from the older images:
+Newer `fpm`-based image.  Still experimental.  Migration steps from the older images:
 * Update the image name you're building from: ```FROM ghcr.io/utaustin-laits/laravel-base:ubuntu-24.04```
 * If you're starting the container as specific user, remove that.  (You're likely doing this through a `user:` command in a docker compose YAML file.
   * Instead, add WWW_UID and WWW_GID environment variables, as described above.
 * If you're using the old `docker-php-ext-configure` and `docker-php-ext-install` scripts in your Dockerfile, remove those.  You can now install these extensions using `apt install` instead.
 
 ### 12.x-php8.4 (and previous *-php* releases)
-Older `mod_php`-based images; abandoned for performance reasons
+`mod_php`-based images; some performance problems and harder to configure with PHP extensions, but should still work.
