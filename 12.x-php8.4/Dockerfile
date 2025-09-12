@@ -6,13 +6,15 @@ RUN a2enmod rewrite
 RUN sed -i s/"DocumentRoot \/var\/www\/html"/"DocumentRoot \/var\/www\/html\/public"/ /etc/apache2/sites-available/000-default.conf
 
 # install PHP, Laravel dependencies
+# mbstring: libonig-dev
+# intl: libicu-dev
 RUN apt-get update \
     && apt-get install -y \
     unzip \
     nano \
     libxml2-dev \
     zlib1g-dev \
-# for mbstring
+    libicu-dev\
     libonig-dev \
     && rm -rf /var/lib/apt/lists/*
 
