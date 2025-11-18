@@ -10,7 +10,7 @@ RUN sed -i s/"DocumentRoot \/var\/www\/html"/"DocumentRoot \/var\/www\/html\/pub
 # intl: libicu-dev
 RUN apt-get update \
     && apt-get install -y \
-    unzip \
+    unzip zip libzip-dev \
     nano \
     libxml2-dev \
     zlib1g-dev \
@@ -23,6 +23,7 @@ RUN pecl install redis && \
     rm -rf /tmp/pear
 
 RUN docker-php-ext-install \
+                           zip \
                            mbstring \
                            pdo_mysql \
                            intl \
