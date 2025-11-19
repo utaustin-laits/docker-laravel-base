@@ -16,6 +16,10 @@ RUN apt-get update \
     zlib1g-dev \
     libicu-dev\
     libonig-dev \
+    libpng-dev \
+    libldap-common \
+    libldap2-dev \
+    libpq-dev \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pecl install redis && \
@@ -23,6 +27,11 @@ RUN pecl install redis && \
     rm -rf /tmp/pear
 
 RUN docker-php-ext-install \
+                           gd \
+                           ldap \
+                           pgsql \
+                           pdo_pgsql \
+                           bcmath \
                            zip \
                            mbstring \
                            pdo_mysql \
